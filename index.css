@@ -1,0 +1,436 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: sans-serif;                                                
+}
+
+.mala{
+    perspective: 4000px;
+    display: none;
+}
+
+.rumala{
+    height: 230px;
+    width: 80px;
+    margin:auto;
+    margin-top: 70px;
+    background: url(images/rudraksh-mala108\ less.png)center no-repeat;
+        background-size: cover;
+        background-position-y: -8045px;
+}
+
+.rumalatext{
+    height: 160px;
+    width: 320px;
+    margin: auto;
+    margin-top: 10px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.reload{
+    height: 40px;
+    width: 100px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.again{
+    height: 30px;
+    width: 100px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    opacity: -10;
+    cursor: pointer;
+}
+
+.refer{
+    float: right;
+    position: absolute;
+    bottom: 20px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.congo{
+    opacity: 0;
+}
+
+.langu{
+    /*height: 50px;
+    width: 173px;*/
+    float: right;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    /*text-align: center;*/
+    font-size: 20px;
+}
+
+.check{
+    height: 20px;
+    width: 20px;
+}
+
+.know{
+    opacity: 0;
+}
+
+.unseclectable, .langu{
+    -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+}
+
+.referal{
+    cursor: pointer;
+}
+
+/*.settings{
+    height: 100vh;
+    width: 100%;
+    /*overflow-y: scroll;
+    float: left;
+}*/
+
+#setticon{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    left: 90px;
+    top: 1px;
+}
+
+.settings{
+    height: 100vh;
+    width: 100%;
+    background:0px;
+    float: left;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 1;
+    display: none;
+
+}
+
+.left{
+    height: 100vh;
+    width: 70%;
+    border: border-box;
+    background: aqua;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.right{
+    height: 100vh;
+    width: 30%;
+    border: border-box;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cut{
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    right: 10px;
+    bottom: 50px;
+    border: border-box;
+    display: none;   
+}
+
+.sethed{
+    font-size: 40px;
+    font-weight: bolder;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+}
+
+.noofmala, .volbox{
+    width: 70px;
+    height: auto;
+    font-size: 40px;
+}
+.basondtext, .basematext, .badroptext, .basevotext{
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+#noof, #vol{
+    margin-left: 30px;
+    height: 25px;
+}
+
+/*On Off switch*/
+
+.onoffswitch {
+    position: relative; width: 85px;
+    user-select: none;
+    -webkit-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 20px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 9px;
+    background-color: #34A7C1; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 9px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 24px; margin: 3px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 51px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+/*On Off switch*/
+/*lang change*/
+.langswitch {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 85px;
+    user-select: none;
+    -webkit-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select: none;
+}
+.langswitch-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.langswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.langswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.langswitch-inner:before, .langswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 20px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.langswitch-inner:before {
+    content: "Eng";
+    padding-left: 9px;
+    background-color: royalblue; color: #FFFFFF;
+}
+.langswitch-inner:after {
+    content: "हिंदी";
+    padding-right: 9px;
+    background-color: green; color: white;
+    text-align: right;
+}
+.langswitch-switch {
+    display: block; width: 24px; margin: 3px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 51px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.langswitch-checkbox:checked + .langswitch-label .langswitch-inner {
+    margin-left: 0;
+}
+.langswitch-checkbox:checked + .langswitch-label .langswitch-switch {
+    right: 0px; 
+}
+/*lang change*/
+.onoffswitch{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+.balangtext{
+    position: absolute;
+    right: 87px;
+    color: white;
+    top: 5px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.basettext{
+    position: absolute;
+    color: white;
+    left: 2px;
+    top: 5px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+/*scroll settings*/
+.setscroll{
+    overflow-y: auto;
+}
+
+/*scroll settings*/
+
+.backsoddrop{
+    height: 50px;
+    width: 190px;
+    margin-left: 30px;
+    font-size: 25px;
+}
+
+.messagecontain{
+    height: 100vh;
+    width: 100%;
+}
+
+.messagecancel{
+    width: 100%;
+    height: 100vh;
+}
+
+.message{
+    background-color: white;
+    height: 300px;
+    width: 65%;
+    margin: auto;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 30%;
+    
+    /*text-align: center;
+    align-content: center ;*/
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 15px rgba(0, 0, 0, 0.3);
+    border: 5px black solid;
+    background: url(images/download.jpg) center no-repeat;
+        background-size: 100% 100vh;
+}
+
+.up{
+    height: 10%;
+    width: 100%;
+    border: border-box;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: row;
+}
+.down{
+    height: 90%;
+    width: 95%;
+    border: border-box;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+.engSetText{
+    border: border-box;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.hindiSetText{
+    border: border-box;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+#crossText{
+    margin: auto;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.hindiSetText, .engSetText{
+    width: 100%;
+    height: 120px;
+    overflow-y: auto;
+    margin-left: 5px;
+}
+.engSetText{
+    height: 130px;
+}
+.vsideHed{
+    font-size: 23px;
+}
+
+#rudra{
+    height: 150px;
+    width: 80px;
+    margin: auto;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 3%;
+    
+}
+
+.reset{
+    height: 70px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 35px;
+    border-radius: 40px;
+    border: none;
+}

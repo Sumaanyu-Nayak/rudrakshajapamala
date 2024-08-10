@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="index.css">
+    <link rel="apple-touch-icon" sizes="60x60" href="Favicon2.ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Favicon2.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Favicon2.ico/favicon-16x16.png">
+    <link rel="manifest" href="Favicon2.ico/site.webmanifest">
+    <link rel="mask-icon" href="Favicon2.ico/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>Dhyana Nama Japa with Virtual Mala</title>
+    <style>
+        #loader {
+            width: 100px;
+            height: 100px;
+            background: url(images/Hinduism\ sign.gif) center no-repeat;
+                background-size: cover;
+        }
+          
+        .center {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body >
+    <div id="loader" class="center"></div>
+    <div class="messagecontain" id="messagecontain">
+        <div class="messagecancel" id="messagecancel">
+            <img id="rudra" src="images/rudra.png">
+        </div>
+        <div id="message" class="message">
+            <div class="vside up" id="cross" style="color: blue">
+                <div id="crossText"><u>Hari Om</u>&nbsp;::&nbsp;<u>हरी ॐ</u>
+                </div>
+            </div>
+            <div class="vside down" id="textdisplay">
+                <div class="engSetText" style="margin-top: 10px; font-size: 22px;">
+                    <span class="vsideHed"><u>Eng:-</u></span>
+                    <br>
+                    Go to Settings and set your Japa Characteristics
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                <div class="hindiSetText" style="font-size: 22px;">
+                    <span class="vsideHed"><u>हिंदी</u>:-</span>
+                    <br>
+                    अपने पसंद अनुसार जप की Settings तैय करें
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="setIcon" id="setIcon">
+        <span class="basettext" id="basettext">Settings: </span>
+        <img id="setticon" src="images/settings2.png">
+    </div>
+    <div class="settings" id="settings">        
+        <div class="side left" id="set">
+            <div class="sethed" id="sethed"><u>Settings</u></div>
+            <div class="setscroll">
+                <div class="rag" id="rag">
+                <span class="basematext" id="basematext">‣⩥<u>Number of Mala's:</u></span> 
+                <br>
+                <input type="range" id="noof" name="noofmala" min="1" max="100" value="1">
+                <input type="number" class="noofmala" id="noofmala" value="1" max="100"> 
+                </div>
+                <br>
+                <!--on off switch-->
+                <div class="onandoff" onclick="checkAudio()">
+                    <span class="basondtext">‣⩥<u>Background Sound:</u></span>
+                    <br>
+                    <div class="onoffswitch">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
+                        <label class="onoffswitch-label" for="myonoffswitch">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                        </label>
+                    </div>
+                </div>
+                <!--On off switch-->
+                <br>
+                <!--Drop down-->
+                <div class="drop-down" id="drop">
+                    <div class="badroptext" id="badroptext">‣⩥<u>Background Audio:</u></div>
+                    <br>
+                    <div class="dropmenu" id="dropmenu">
+                        <select name="Basound" id="backsoddrop" class="backsoddrop" onchange="checkAudio()">
+                            <option value="1">Om</option>
+                            <option value="2">Flute</option>
+                            <option value="3">Mother nature</option>
+                        </select>
+                    </div>
+                </div>
+                <!--Drop down-->
+                <br>
+                <!--Volume-->
+                <div class="ragvo" id="ragvo">
+                    <span class="basevotext" id="basevotext">‣⩥<u>Volume Control:</u></span>
+                    <br>
+                    <input type="range" id="vol" name="vol" min="1" max="100" value="100">
+                    <input type="number" class="volbox" id="volbox" value="100" max="100">%
+                </div>
+                <!--Volume-->
+                <br>
+                <br>
+                <br>
+                <!--reset-->
+                <div class="reset" id="reset">
+                    <button class="reset" onclick="rel()"> Reset Settings </button>
+                </div>
+            </div>
+            <div class="go" id="go">
+                <img class="cut" id="cut" src="images/go.gif">
+            </div>
+        </div>
+        <div class="side right" id="cancel">
+        </div>
+    </div>
+    <!--<b><div class="visit" id="visit" style="color: white;">People visited: <span class="visitval" id="visitval">0</span></div></b>-->
+    <div class="lang" id="lang" onclick="checkLang()">
+        <span class="balangtext" id="balangtext">Language: </span>
+        <div class="langswitch">
+            <input type="checkbox" name="langswitch" class="langswitch-checkbox" id="mylangswitch" tabindex="0" checked>
+            <label class="langswitch-label" for="mylangswitch">
+                <span class="langswitch-inner"></span>
+                <span class="langswitch-switch"></span>
+            </label>
+        </div>
+    </div>
+    <div class="container unseclectable" id="container">
+        
+        <div class="mala" id="mala">
+           <b><div class="rumala" id="rumala" onclick="englishJapa()">
+                <p class="clickme" id="clickme">Click here to start the japa</p>
+            </div> </b>
+            <div class="rumalatext" id="rumalatext">
+                <p class="know" id="know"><b>You have done </b><span id="count">0</span><b> beads</b>
+                <br>
+                <span class="congo" id='congo'></span>
+                </p>
+            </div>
+            <div class="reload" id="reload">
+                <button style="display:none;" class="again" id="again" onclick="rel()">Once again</button>
+            </div>
+        </div>
+        <div class="youtube" id="youtube">
+            <p class="refer" id="refer" onclick='Redirect()'><b>Sanātana Dharma Saṁskara<sup><b>©</b></sup></b></p>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script>
+        
+        document.onreadystatechange = function() {
+            if (document.readyState != "complete") {
+                document.querySelector(
+                  "body").style.visibility = "hidden";
+                  document.querySelector(
+                  "body").style.background = "white";
+                document.querySelector(
+                  "#loader").style.visibility = "visible";
+            } else {
+                document.querySelector(
+                  "#loader").style.display = "none";
+                document.querySelector(
+                  "body").style.visibility = "visible";
+                document.querySelector(
+                  "body").style.background = "url(images/hindu-traditional-background.png) no-repeat";
+                document.querySelector(
+                  "body").style.backgroundSize = "100% 100vh";
+            }
+        };
+    </script>
+</body>
+</html>
